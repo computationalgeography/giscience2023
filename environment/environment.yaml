@@ -1,0 +1,19 @@
+name: giscience2023
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - numpy
+  - campo
+  - lue
+  - hpx=1.9.0
+  - pcraster
+  - matplotlib-base
+  - jupyterlab
+  - ffmpeg
+  - gdal
+  - glances
+  - psutil
+  - tqdm
+  - qgis
