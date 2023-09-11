@@ -51,6 +51,17 @@ You can now start the Jupyter notebook from the command prompt. The notebook wil
 `jupyter lab daisyworld.ipynb`
 
 
+## Running the LUE model
+
+You can download the model script and input data [here](https://surfdrive.surf.nl/files/index.php/s/teEa1jAbmgsd6YG).
+The model script can be executed e.g. with
+
+`python ./model.py --hpx:threads=4 --write "50,50" input_path output_path`
+
+In case of crashes on Linux systems you can run like
+
+`LD_PRELOAD=$(find $CONDA_PREFIX -name libtcmalloc_minimal.so.4) python ./model.py --hpx:threads=4 --write "50,50" input_path output_path`
+
 ## Further reading
 
 Background on DaisyWorld:
