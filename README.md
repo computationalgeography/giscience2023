@@ -58,9 +58,24 @@ The model script can be executed e.g. with
 
 `python ./model.py --hpx:threads=4 --write "50,50" input_path output_path`
 
+For `output_path` create an output folder first, e.g. `output`
 In case of crashes on Linux systems you can run like
 
 `LD_PRELOAD=$(find $CONDA_PREFIX -name libtcmalloc_minimal.so.4) python ./model.py --hpx:threads=4 --write "50,50" input_path output_path`
+
+### Output visualisation
+
+You can display the output as raster timeseries with aguila. First, change the lines 224-225 in model.py into
+
+```python
+            self.write_raster(discharge, f"discharge_{timestep}.tif")
+            self.write_raster(self.snow, f"snow_{timestep}.tif")
+```
+
+re-run the model and display the output with
+
+`aguila --timesteps=[1,365] output/discharge`
+
 
 ## Further reading
 
